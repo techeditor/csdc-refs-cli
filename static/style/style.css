@@ -339,7 +339,7 @@ pre {
 
 body.home .h1wrap-body,
 body.home .h1wrap .wrap-body {
-  max-width: 940px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
   padding: 0.75rem;
@@ -417,6 +417,12 @@ body.home .max-container a.home-button:visited:hover {
 .home-card br {
   display: none;
 }
+
+/*新增，overide .home-card br*/
+.home-card a span br {
+  display:block;
+}
+
 .home-card :is(a.contributing, a.tag) {
   position: relative;
 }
@@ -476,6 +482,8 @@ body.home .max-container a.home-button:visited:hover {
   --text-opacity: 0.85;
   color: rgb(241 245 249 / var(--text-opacity)) !important;
 }
+
+/*首页块*/
 .home-card a {
   display: flex;
   align-items: center;
@@ -483,7 +491,7 @@ body.home .max-container a.home-button:visited:hover {
   cursor: pointer;
   border-radius: 0.5rem;
   padding: 0rem 1rem;
-  height: 4rem;
+  height: 8rem;
   box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   color: var(--color-fg-default);
   --text-opacity: 0.75;
@@ -630,13 +638,14 @@ a.text-grey {
 
 .wrap-header.h1wrap > h1 {
   font-size: 3rem;
-  line-height: 1;
+  line-height: 1.2;
   margin-bottom: 3rem;
   display: inline-flex;
 }
 
 .wrap-header.h1wrap > h1 > svg {
   margin-right: 1rem;
+  margin-top: 0.4rem;
 }
 
 .h1wrap-body {
@@ -763,19 +772,20 @@ body:not(.home) .h2wrap-body > .wrap:hover .h3wrap > h3 a::after {
 
 .wrap-header.h3wrap > h3 {
   position: sticky;
-  float: right;
+  float: left;
   margin-top: -24px;
   color: rgb(226 232 240/1);
   top: 0px;
   z-index: 10;
-  border-top-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   background-color: #228e6c;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight:bold;
   line-height: 1rem;
   letter-spacing: 0.05em;
 }
@@ -821,7 +831,7 @@ body:not(.home) .h2wrap-body > .wrap:hover .h3wrap > h3 a::after {
 
 .wrap-header.h3wrap > .wrap-body > p:not(:first-child):last-child,
 .h3wrap-body p:not(:first-child):last-child {
-  margin-top: auto;
+  /* margin-top: auto; */
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -1513,8 +1523,9 @@ body.search {
   }
 }
 
-@media (min-width: 768px) {
+/*首页布局*/
+@media (min-width: 900px) {
   .home-card {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
