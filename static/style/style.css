@@ -409,10 +409,11 @@ body.home .max-container a.home-button:visited:hover {
   width: 9rem;
 }
 
+/*修改repeat*/
 .home-card {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .home-card br {
   display: none;
